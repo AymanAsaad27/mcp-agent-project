@@ -113,7 +113,7 @@ The SQLite database is generated locally and is not committed to Git.
 Clone the repository after it has been published, replacing the placeholders with your actual repository details:
 
 ```powershell
-git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git](https://github.com/AymanAsaad27/mcp-agent-project
 cd YOUR_REPOSITORY
 ```
 
