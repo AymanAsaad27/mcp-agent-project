@@ -1,0 +1,228 @@
+{
+  "model": "qwen2.5:7b",
+  "evaluation_type": "first-turn tool selection and argument validation",
+  "total_cases": 9,
+  "passed": 9,
+  "failed": 0,
+  "selection_passes": 9,
+  "selection_accuracy_percent": 100.0,
+  "combined_accuracy_percent": 100.0,
+  "results": [
+    {
+      "id": "sqlite_list",
+      "prompt": "List the tables available in the shop database.",
+      "expected_tools": [
+        "sqlite__list_tables"
+      ],
+      "actual_tools": [
+        "sqlite__list_tables"
+      ],
+      "actual_calls": [
+        {
+          "name": "sqlite__list_tables",
+          "arguments": {
+            "relative_path": "."
+          }
+        }
+      ],
+      "selection_passed": true,
+      "argument_checks": {},
+      "passed": true,
+      "elapsed_seconds": 8.87,
+      "error": null
+    },
+    {
+      "id": "sqlite_describe",
+      "prompt": "Show me the columns in the products table.",
+      "expected_tools": [
+        "sqlite__describe_table"
+      ],
+      "actual_tools": [
+        "sqlite__describe_table"
+      ],
+      "actual_calls": [
+        {
+          "name": "sqlite__describe_table",
+          "arguments": {
+            "table_name": "products"
+          }
+        }
+      ],
+      "selection_passed": true,
+      "argument_checks": {
+        "sqlite__describe_table": {
+          "passed": true,
+          "detail": "Arguments matched."
+        }
+      },
+      "passed": true,
+      "elapsed_seconds": 3.27,
+      "error": null
+    },
+    {
+      "id": "sqlite_query",
+      "prompt": "How many orders are in the shop database?",
+      "expected_tools": [
+        "sqlite__query_database"
+      ],
+      "actual_tools": [
+        "sqlite__query_database"
+      ],
+      "actual_calls": [
+        {
+          "name": "sqlite__query_database",
+          "arguments": {
+            "sql": "SELECT COUNT(*) FROM orders"
+          }
+        }
+      ],
+      "selection_passed": true,
+      "argument_checks": {
+        "sqlite__query_database": {
+          "passed": true,
+          "detail": "Arguments matched."
+        }
+      },
+      "passed": true,
+      "elapsed_seconds": 3.65,
+      "error": null
+    },
+    {
+      "id": "files_list",
+      "prompt": "List the files and folders in my workspace root.",
+      "expected_tools": [
+        "files__list_files"
+      ],
+      "actual_tools": [
+        "files__list_files"
+      ],
+      "actual_calls": [
+        {
+          "name": "files__list_files",
+          "arguments": {
+            "relative_path": "."
+          }
+        }
+      ],
+      "selection_passed": true,
+      "argument_checks": {
+        "files__list_files": {
+          "passed": true,
+          "detail": "Arguments matched."
+        }
+      },
+      "passed": true,
+      "elapsed_seconds": 3.32,
+      "error": null
+    },
+    {
+      "id": "files_read",
+      "prompt": "Read company_handbook.md and tell me the working hours.",
+      "expected_tools": [
+        "files__read_file"
+      ],
+      "actual_tools": [
+        "files__read_file"
+      ],
+      "actual_calls": [
+        {
+          "name": "files__read_file",
+          "arguments": {
+            "relative_path": "company_handbook.md"
+          }
+        }
+      ],
+      "selection_passed": true,
+      "argument_checks": {
+        "files__read_file": {
+          "passed": true,
+          "detail": "Arguments matched."
+        }
+      },
+      "passed": true,
+      "elapsed_seconds": 4.04,
+      "error": null
+    },
+    {
+      "id": "files_write",
+      "prompt": "Save the exact sentence 'Evaluation note' to notes/evaluation_note.txt.",
+      "expected_tools": [
+        "files__write_file"
+      ],
+      "actual_tools": [
+        "files__write_file"
+      ],
+      "actual_calls": [
+        {
+          "name": "files__write_file",
+          "arguments": {
+            "relative_path": "notes/evaluation_note.txt",
+            "content": "Evaluation note"
+          }
+        }
+      ],
+      "selection_passed": true,
+      "argument_checks": {
+        "files__write_file": {
+          "passed": true,
+          "detail": "Arguments matched."
+        }
+      },
+      "passed": true,
+      "elapsed_seconds": 5.06,
+      "error": null
+    },
+    {
+      "id": "weather",
+      "prompt": "What is the current weather in Singapore?",
+      "expected_tools": [
+        "weather__get_weather"
+      ],
+      "actual_tools": [
+        "weather__get_weather"
+      ],
+      "actual_calls": [
+        {
+          "name": "weather__get_weather",
+          "arguments": {
+            "city": "Singapore"
+          }
+        }
+      ],
+      "selection_passed": true,
+      "argument_checks": {
+        "weather__get_weather": {
+          "passed": true,
+          "detail": "Arguments matched."
+        }
+      },
+      "passed": true,
+      "elapsed_seconds": 3.14,
+      "error": null
+    },
+    {
+      "id": "no_tool_math",
+      "prompt": "What is 17 multiplied by 23?",
+      "expected_tools": [],
+      "actual_tools": [],
+      "actual_calls": [],
+      "selection_passed": true,
+      "argument_checks": {},
+      "passed": true,
+      "elapsed_seconds": 2.71,
+      "error": null
+    },
+    {
+      "id": "no_tool_general",
+      "prompt": "In one sentence, explain what MCP stands for.",
+      "expected_tools": [],
+      "actual_tools": [],
+      "actual_calls": [],
+      "selection_passed": true,
+      "argument_checks": {},
+      "passed": true,
+      "elapsed_seconds": 3.46,
+      "error": null
+    }
+  ]
+}

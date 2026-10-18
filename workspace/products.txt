@@ -1,0 +1,10 @@
+Products available in the shop:
+
+- Wireless Mouse: Electronics, $19.99
+- Mechanical Keyboard: Electronics, $74.50
+- Notebook Pack: Stationery, $8.25
+- Desk Lamp: Home, $32.00
+- USB-C Hub: Electronics, $29.90
+- Water Bottle: Home, $12.40
+
+Prices are sample data for the MCP agent demonstration.
